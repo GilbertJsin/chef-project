@@ -4,8 +4,9 @@
 
 body {
   margin: 0;
+  min-width: 750px;
   font-family: Inter, sans-serif;
-  background-color: darkgray;
+  background-color: #f7f5f2;
 }
 
 .header {
@@ -15,7 +16,7 @@ body {
   position: sticky;
   height: 80px;
   top: 0;
-  background-color: #363737;
+  background-color: #2e2e2e;
   z-index: 100;
   padding: 1rem;
   margin: .5rem;
@@ -27,21 +28,67 @@ body {
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 header > h1{
   padding-left: 10px;
   font-weight: 500;
+  color: #f77f00;
 }
 
 header > img {
   width: 50px;
 }
 
+.add-ingredient-form{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.add-ingredient-form > input {
+  height: 40px;
+  min-width: 300px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+
+.add-ingredient-form > button {
+  border-radius: 8px;
+  border: none;
+  background-color: #f77f00;
+  color: white;
+  transition: background-color 0.2s ease;
+  width: 150px;
+  min-width: 150px;
+  font-size: .875rem;
+  white-space: nowrap;
+}
+
+.add-ingredient-form > button:hover {
+  background-color: #c65f00;
+}
 
 
+header > img {
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
 
+.logo-icon {
+  fill: #f77f00;
+  transition: fill 0.2s ease;
+}
+
+.logo-icon:hover {
+  fill: #ffae42;
+}
 
 
 
