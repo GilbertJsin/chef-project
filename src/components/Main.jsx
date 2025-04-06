@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Main(){
 
-    const [ingredients, setingredients] = React.useState([])
+    const [ingredients, setIngredients] = React.useState([])
 
     const ingredientList = ingredients.map((ingredient, index) =>(
         <li key={index}>{ingredient}</li>
@@ -16,10 +16,13 @@ export default function Main(){
     console.log(ingredients);
 
     if (newIngredient.trim() !== "") {
-        setingredients((previngredients) => [...previngredients, newIngredient]);
+        setIngredients((previngredients) => [...previngredients, newIngredient]);
       e.currentTarget.reset(); // optional: clears input
     }
+  }
 
+  function handleClearIngredients() {
+    setIngredients([]); // 💥 clears the array
   }
 
      return ( <main>
@@ -36,6 +39,11 @@ export default function Main(){
         <ul>
             {ingredientList}
         </ul>
+        {ingredients.length > 0 && (
+        <button onClick={handleClearIngredients} style={{ marginTop: "1rem" }}>
+            Clear Ingredients
+        </button>
+        )}
     </main>
     )
 }
