@@ -9,24 +9,21 @@ export default function Main(){
     ));
     
 
-  function handleAddIngredientClick(e){
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+  function handleAddIngredientClick(formData){
     const newIngredient = formData.get("ingredient").toLowerCase().trim();
     console.log(ingredients);
 
     if (newIngredient.trim() !== "") {
         setIngredients((previngredients) => [...previngredients, newIngredient]);
-      e.currentTarget.reset(); // optional: clears input
     }
   }
 
   function handleClearIngredients() {
-    setIngredients([]); // 💥 clears the array
+    setIngredients([]); 
   }
 
      return ( <main>
-        <form className="add-ingredient-form" onSubmit={handleAddIngredientClick}>
+        <form className="add-ingredient-form" action={handleAddIngredientClick}>
             <input 
             id="ingredient-input"
             aria-label="Add ingredient"
